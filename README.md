@@ -26,6 +26,12 @@ This project aims to:
 * Analyze transformer-based visual representations
 * Evaluate binary and multi-class classification performance
 * Build a reproducible research-oriented pipeline
+## Dataset and Reference Paper
+
+This project uses the **Defactify Image Dataset**, introduced in the paper **“A Comprehensive Dataset for Human vs. AI Generated Image Detection.”**
+
+- Reference paper: https://arxiv.org/abs/2601.00553
+- Dataset: https://huggingface.co/datasets/Rajarshi-Roy-research/Defactify_Image_Dataset
 
 # Real and AI-Generated Image Detection using CLIP
 Three experiments are implemented in this repository:
