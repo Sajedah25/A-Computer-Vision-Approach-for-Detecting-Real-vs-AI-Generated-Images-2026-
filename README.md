@@ -129,36 +129,186 @@ project/
 ├── MULTIMODAL_WITH_FORENSIC_PREPROCESSING.ipynb
 ├── README.md
 ├── requirements.txt
-└── data/
-    ├── train.csv
-    ├── val.csv
-    ├── test.csv
+```
+## How to Reproduce the Results
+
+To reproduce the reported results, run the three notebooks provided in this repository using the same dataset source, label mapping, preprocessing steps, and evaluation procedure.
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Sajedah25/A-Computer-Vision-Approach-for-Detecting-Real-vs-AI-Generated-Images-2026-.git
 ```
 
-## Requirements
+### 2. Install the Required Libraries
 
-The project uses Python and PyTorch. The main libraries are:
-
-```text
-torch
-torchvision
-transformers
-pandas
-numpy
-scikit-learn
-matplotlib
-seaborn
-Pillow
-opencv-python
-tqdm
-```
-
-Install all dependencies using:
+Install the required Python libraries:
 
 ```bash
 pip install -r requirements.txt
 ```
 
+### 3. Open the Notebooks
+
+Open the notebooks in Google Colab, Jupyter Notebook, Kaggle Notebook, or VS Code.
+
+The three experiment notebooks are:
+
+```text
+IMAGE_ONLY_CLIP.ipynb
+MULTIMODAL_CLIP.ipynb
+MULTIMODAL_WITH_FORENSIC_PREPROCESSING.ipynb
+```
+
+### 4. Prepare the Dataset
+
+The dataset is loaded inside the notebooks. To reproduce the same results, use the same dataset source and the same train, validation, and test split used in the experiments.
+
+The models are trained using `Label_B` as the main 6-class target.
+
+The label mapping is:
+
+| Label_B | Class |
+|---|---|
+| 0 | Real |
+| 1 | Stable Diffusion 2.1 |
+| 2 | Stable Diffusion XL |
+| 3 | Stable Diffusion 3 |
+| 4 | DALL-E 3 |
+| 5 | Midjourney 6 |
+
+For Task A, the 6-class labels are converted into binary labels:
+
+| Label_B | Task A Label |
+|---|---|
+| 0 | Real |
+| 1, 2, 3, 4, 5 | Fake |
+
+### 5. Run Each Experiment
+
+Run each notebook from top to bottom.
+
+#### Experiment 1: Image-only CLIP
+
+Run:
+
+```text
+IMAGE_ONLY_CLIP.ipynb
+```
+
+This experiment uses only the image input and trains a CLIP-based image classifier.
+
+#### Experiment 2: Multimodal CLIP
+
+Run:
+
+```text
+MULTIMODAL_CLIP.ipynb
+```
+
+This experiment uses both image and text input. Image features and text features are extracted using CLIP and combined for classification.
+
+#### Experiment 3: Multimodal CLIP with Forensic Preprocessing
+
+Run:
+
+```text
+MULTIMODAL_WITH_FORENSIC_PREPROCESSING.ipynb
+```
+
+This experiment applies forensic frequency preprocessing to the image before classification. The preprocessing highlights residual and frequency-based patterns before the image is passed to the model.
+
+### 6. Training Procedure
+
+Each notebook trains the model using `Label_B` as a 6-class classification label.
+
+During training, the following values are tracked:
+
+- training loss
+- validation loss
+- validation accuracy
+- validation weighted F1-score
+
+The best model checkpoint is saved based on validation performance.
+
+The test set is not used during training or model selection.
+
+### 7. Final Testing Procedure
+
+After training is complete, run the final testing section in each notebook.
+
+The final testing section:
+
+1. loads the best saved checkpoint
+2. switches the model to evaluation mode
+3. evaluates the model on the test set
+4. calculates Task B results using the original 6-class labels
+5. derives Task A results by converting the 6-class predictions into binary real/fake predictions
+
+### 8. Task B Evaluation
+
+Task B is the 6-class source identification task.
+
+The model predicts one of the following classes:
+
+```text
+0 = Real
+1 = Stable Diffusion 2.1
+2 = Stable Diffusion XL
+3 = Stable Diffusion 3
+4 = DALL-E 3
+5 = Midjourney 6
+```
+
+The reported Task B metrics are:
+
+- test loss
+- accuracy
+- weighted F1-score
+- classification report
+- confusion matrix
+- ROC curves
+- precision-recall curves
+
+### 9. Task A Evaluation
+
+Task A is the binary real-vs-fake task.
+
+Task A is derived from the same Task B predictions using the following mapping:
+
+```text
+0 → Real
+1, 2, 3, 4, 5 → Fake
+```
+
+The reported Task A metrics are:
+
+- accuracy
+- weighted F1-score
+- precision
+- recall
+- classification report
+- confusion matrix
+- ROC curve
+- precision-recall curve
+- 
+### 10. Reproducibility Notes
+
+To reproduce the results as closely as possible, use the same:
+
+- dataset source
+- train/validation/test split
+- label mapping
+- preprocessing steps
+- model architecture
+- batch size
+- learning rate
+- number of epochs
+- optimizer
+- scheduler, if used
+- checkpoint selection method
+
+The best checkpoint should be selected using validation performance only. The test set should only be used once for final evaluation after training is complete.
 # Conclusion
 
 This project demonstrates that:
