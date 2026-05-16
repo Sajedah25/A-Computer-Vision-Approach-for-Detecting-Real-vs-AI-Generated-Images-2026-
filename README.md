@@ -120,23 +120,27 @@ converting it back to RGB format
 
 This experiment tests whether frequency-based forensic information improves AI-generated image detection.
 
-Repository Structure│
+## Repository Structure
+
+```text
+project/
 ├── IMAGE_ONLY_CLIP.ipynb
 ├── MULTIMODAL_CLIP.ipynb
 ├── MULTIMODAL_WITH_FORENSIC_PREPROCESSING.ipynb
-│
 ├── README.md
 ├── requirements.txt
-│
 └── data/
     ├── train.csv
     ├── val.csv
     ├── test.csv
+    └── images/
+```
 
-Requirements
+## Requirements
 
 The project uses Python and PyTorch. The main libraries are:
 
+```text
 torch
 torchvision
 transformers
@@ -148,10 +152,13 @@ seaborn
 Pillow
 opencv-python
 tqdm
+```
 
 Install all dependencies using:
 
+```bash
 pip install -r requirements.txt
+```
 
 # Conclusion
 
