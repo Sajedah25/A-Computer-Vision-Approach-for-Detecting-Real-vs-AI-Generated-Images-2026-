@@ -262,7 +262,6 @@ To reproduce the results as closely as possible, use the same:
 - learning rate
 - number of epochs
 - optimizer
-- scheduler, if used
 - checkpoint selection method
 
 The best checkpoint should be selected using validation performance only. The test set should only be used once for final evaluation after training is complete.
