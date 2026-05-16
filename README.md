@@ -1,7 +1,4 @@
 # A-Computer-Vision-Approach-for-Detecting-Real-vs-AI-Generated-Images-2026-
-Deep learning framework for AI-generated image detection using spatial and frequency-domain analysis.
-# Versus Fake: Multimodal AI-Generated Image Detection
-
 A deep learning framework for detecting AI-generated images using multimodal CLIP architectures, forensic frequency analysis, and transformer-based representation learning.
 
 ---
