@@ -133,7 +133,6 @@ project/
     ├── train.csv
     ├── val.csv
     ├── test.csv
-    └── images/
 ```
 
 ## Requirements
