@@ -90,7 +90,7 @@ For Task A, the labels are converted as follows:
 
 This experiment uses only image input. The image is passed through the CLIP image encoder, and the extracted visual features are used for 6-class classification.
 
-Notebook:IMAGE_ONLY_CLIP.ipynb
+Notebook:IMAGE_ONLY_CLIP_FIXED.ipynb
 
 This experiment serves as the visual baseline.
 
@@ -202,7 +202,7 @@ The reported Task A metrics are:
 
 ```text
 project/
-├── IMAGE_ONLY_CLIP.ipynb
+├── IMAGE_ONLY_CLIP_FIXED.ipynb
 ├── MULTIMODAL_CLIP.ipynb
 ├── MULTIMODAL_WITH_FORENSIC_PREPROCESSING.ipynb
 ├── README.md
@@ -233,7 +233,7 @@ Open the notebooks in Google Colab, Jupyter Notebook, Kaggle Notebook, or VS Cod
 The three experiment notebooks are:
 
 ```text
-IMAGE_ONLY_CLIP.ipynb
+IMAGE_ONLY_CLIP_FIXED.ipynb
 MULTIMODAL_CLIP.ipynb
 MULTIMODAL_WITH_FORENSIC_PREPROCESSING.ipynb
 ```
