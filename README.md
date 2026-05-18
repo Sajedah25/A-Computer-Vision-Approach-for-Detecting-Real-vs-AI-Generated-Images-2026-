@@ -90,7 +90,7 @@ For Task A, the labels are converted as follows:
 
 This experiment uses only image input. The image is passed through the CLIP image encoder, and the extracted visual features are used for 6-class classification.
 
-Notebook:IMAGE_ONLY_CLIP_FIXED.ipynb
+Notebook:FIXED_FINAL_IMAGE_ONLY.ipynb
 
 This experiment serves as the visual baseline.
 
@@ -100,7 +100,7 @@ This experiment uses both image and text input. The image is processed using the
 
 Notebook:
 
-MULTIMODAL_CLIP.ipynb
+FIXED_FINAL_MULTIMODAL.ipynb
 
 This experiment evaluates whether combining visual and textual information improves source model identification.
 
@@ -108,7 +108,7 @@ This experiment evaluates whether combining visual and textual information impro
 
 This experiment applies forensic preprocessing to the image before passing it to the model. The preprocessing converts the image into a frequency/autocorrelation-based representation to highlight residual patterns and possible generation artifacts.
 
-Notebook:MULTIMODAL_WITH_FORENSIC_PREPROCESSING.ipynb
+Notebook:FIXED_FINAL_MULTIMODAL_WITH_FORENSIC_PREPROCESSING.ipynb
 
 The forensic preprocessing includes:
 
@@ -233,9 +233,9 @@ Open the notebooks in Google Colab, Jupyter Notebook, Kaggle Notebook, or VS Cod
 The three experiment notebooks are:
 
 ```text
-IMAGE_ONLY_CLIP_FIXED.ipynb
-MULTIMODAL_CLIP.ipynb
-MULTIMODAL_WITH_FORENSIC_PREPROCESSING.ipynb
+FIXED_FINAL_IMAGE_ONLY.ipynb
+FIXED_FINAL_MULTIMODAL.ipynb
+FIXED_FINAL_MULTIMODAL_WITH_FORENSIC_PREPROCESSING.ipynb
 ```
 
 ### 4. Prepare the Dataset
