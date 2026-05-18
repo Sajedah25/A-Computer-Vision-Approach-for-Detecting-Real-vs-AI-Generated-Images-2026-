@@ -202,9 +202,9 @@ The reported Task A metrics are:
 
 ```text
 project/
-├── IMAGE_ONLY_CLIP_FIXED.ipynb
-├── MULTIMODAL_CLIP.ipynb
-├── MULTIMODAL_WITH_FORENSIC_PREPROCESSING.ipynb
+├── FIXED_FINAL_IMAGE_ONLY.ipynb
+├── FIXED_FINAL_MULTIMODAL.ipynb
+├── FIXED_FINAL_MULTIMODAL_WITH_FORENSIC_PREPROCESSING.ipynb
 ├── README.md
 ├── requirements.txt
 ```
